@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+
+{% block content %}
+  <h1 id="form-title">File Load Home</h1>
+  <p id="form-title">Welcome to FileLoad, a website developed by <em>ZWJ Venter</em>!</p>
+  <h2 id="form-title">Dynamic Content</h2>
+  <p id="form-title">The database has the following record counts:</p>
+  <ul>
+    <li id="form-title"><strong id="form-title">Inventory:</strong> {{ num_inventory }}</li>
+    <li id="form-title"><strong id="form-title">Inventory available:</strong> {{ num_instances_available }}</li>
+  </ul>
+  <h2 id="form-title"> Upload files</h2>
+    <p id="form-title">Upload member information via a csv file</p>
+    <button type="button">
+       <a  href="{% url 'csvs:UploadBookingFile' %}">Upload Booking/ Member Data</a>
+    </button>
+        <br/>
+        <br/>
+     <p id="form-title">Upload inventory information via a csv file</p>
+    <button type="button" >
+       <a href="{% url 'csvs:UploadInventoryFile' %}">Upload Inventory Data</a>
+    </button>
+        <br/>
+        <br/>
+    <h2 id="form-title"> Make a Booking</h2>
+        <p id="form-title">Make a Booking</p>
+    <button type="button">
+       <a  href="{% url 'booking:BookingView' %}">Make Booking</a>
+    </button>
+{% endblock %}
